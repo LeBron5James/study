@@ -178,7 +178,7 @@
 5. 期约的链式调用通常通过返回另一个期约来实现。可以使用期约的finally()方法来在期约解决或拒绝后执行特定操作。
 6. 可以使用Promise.all()和Promise.race()静态方法，分别返回一个新的期约，针对给定的一组期约，当全部期约解决时，all()方法返回解决值数组，race()方法返回解决或拒绝的第一个期约值。
 
-# 12.BOM
+# 12.==BOM==
 
 1. BOM：是浏览器提供的一组API，用于控制浏览器窗口、历史记录、定时器、屏幕属性等。
 2. window对象是BOM的核心对象，它代表浏览器中的一个窗口或一个标签页。JavaScript中全局变量和函数都属于window对象的属性和方法。==Global对象，JavaScript接口==
@@ -199,3 +199,142 @@
 5. 能力检测是客户端检测的另一种方式，它并不关心浏览器或操作系统的类型和版本，而是关注浏览器是否支持某个特定的功能或属性。能力检测通常使用JavaScript的if语句和typeof运算符进行实现。
 6. 使用特性检测和系列检测方法可以解决不同浏览器兼容性的问题，例如创建XMLHttpRequest对象的方式等。
 7. 用户代理字符串可以被修改和伪造，因此客户端检测并不能完全解决浏览器兼容性问题。对于一些核心特性，可以使用现代Web API，例如Canvas、Web Workers、Geolocation、Web Storage和Web Sockets等，避免使用过时的技术。
+
+# 14.==DOM==
+
+1. DOM是一种表示和操作HTML和XML文档的API。通过DOM，可以使用JavaScript来访问和操纵文档的结构、样式和内容。
+2. DOM树是文档的层次结构表示，由节点组成。HTML元素、文本和属性都是节点。DOM树允许我们通过节点之间的关系来操作和访问文档。
+3. 节点有不同的类型，如元素节点、文本节点和属性节点。可以使用不同的方法和属性来检测和访问节点的类型。
+4. 节点之间有父子关系和兄弟关系。可以使用不同的方法和属性来遍历和操作节点之间的关系，例如parentNode、childNodes、previousSibling和nextSibling。
+5. 可以使用getElementById()、getElementsByTagName()和getElementsByClassName()等方法来选择和访问元素节点。可以通过节点的tagName、nodeName和nodeType属性来检测和访问节点的信息。
+6. ==操纵节点==：**appendChild()**末尾添加节点，**insertBefore(要插入的节点，参照点)**任意位置插入，**removeChild()**移除节点，**cloneNode()**复制节点，接收一个Boolean参数，表示是否深复制，**normalize()**处理文档
+7. 可以使用属性和方法来操作元素节点的样式（如className、style）和内容（如innerHTML、textContent）。可以使用getAttribute()和setAttribute()方法来访问和修改元素节点的属性。
+8. DOM编程：
+
+   1. ==通过innerHTML属性创建的<script>元素永远不会执行==
+   2. <link>元素用于包含CSS外部文件，通过外部文件加载样式是一个异步过程，而<style>元素用于添加嵌入样式
+9. 使用MutationObserver接口可以观察整个文档、DOM树的一部分，或某个元素。
+   1. 核心是：异步回调与记录队列模型。
+   2. observe()方法：两个参数--要观察其变化的DOM节点，以及一个MutationObserverInit对象
+   3. disconnect()方法：提前终止执行回调
+
+# 15.DOM扩展
+
+1. 选择器API：DOM扩展了元素选择器的功能，querySelector()和querySelectorAll()方法来使用CSS选择器定位元素。可以更方便地选择和操作文档中的元素。
+   1. matches()可以方便的检测某个元素会不会被querySelector()和querySelectorAll()方法返回
+2. CSS扩展：getElementsByClassName()
+3. 类名操作：新增了classList属性和相关方法，如add()、remove()、toggle()和contains()，使操作元素的类名更加方便和灵活。
+4. 数据属性：以通过使用自定义数据属性来存储和访问与元素相关的数据。可以通过dataset属性来访问自定义数据属性的值。
+5. 内部HTML：可以使用innerHTML属性来访问和操作元素的HTML内容。这使得动态地插入、更新和删除元素的HTML内容变得更加简单。outerText不止会移除所有后代节点，而是会替换整个元素。
+6. Traversal和Range：新增了更强大的节点遍历和范围操作功能，如遍历子节点、兄弟节点、父节点，以及使用范围对象进行更精确的节点选择和处理。
+7. 样式操作：扩展了元素样式的操作功能，如新增了getComputedStyle()方法用于获取计算后的样式，也新增了style属性的部分扩展和计算样式的能力。
+8. 滚动：scrollIntoView()
+
+# 16.DOM2和DOM3
+
+1. DOM2	Node类型包含特定于命名空间的属性：
+   1. localName
+   2. namespaceURI
+   3. prefix
+2. DOM3     进一步增加命名空间相关的方法
+   1. isDefaultNamespace
+   2. lookupNamespaceURI
+   3. lookupPrefix
+3. DOM2   在document类型上新增命名空间特定的方法
+   1. createElementNS(namespaceURI，tagName)
+   2. createAttributeNS(namespaceURI,attributeName)
+   3. getElementsByTagNameNs(namespaceURI,tagName)
+4. DOM视图和样式：提供了更多的方法和属性来操作和访问文档的视图和样式。例如，可以使用document.defaultView获取文档的视图，使用getComputedStyle()方法获取计算后的样式。
+5. CSS规则：CSSStyleRule是最长用的表示样式信息，属性有
+   1. cssText：返回整条规则的文本
+   2. parentRule：指向包含规则
+   3. parentStyleSheet：包含当前规则的样式表
+   4. selectorText:返回规则的选择符文本
+   5. style
+   6. type：表示规则类型
+6. 创建规则：insertRule(规则的文本，插入位置的索引值)
+7. 删除规则：deleteRule()
+8. 偏移尺寸（Offset Size）：偏移尺寸是指网页元素相对于其父元素的位置和大小。它包括元素的偏移宽度（offset width）和偏移高度（offset height）。偏移宽度是元素的实际宽度，包括元素的内容、内边距和边框；偏移高度是元素的实际高度，包括元素的内容、内边距和边框。偏移尺寸通常用于确定元素在页面中的准确位置。
+9. 客户端尺寸（Client Size）：客户端尺寸是指浏览器窗口中网页可见区域的大小。它包括客户端宽度（client width）和客户端高度（client height）。客户端宽度是浏览器窗口的宽度减去窗口的边框和滚动条的宽度；客户端高度是浏览器窗口的高度减去窗口的边框和滚动条的高度。客户端尺寸通常用于响应式设计，以适应不同大小的浏览器窗口。
+10. 滚动尺寸（Scroll Size）：滚动尺寸是指网页内容在滚动后可见区域的大小。它包括滚动宽度（scroll width）和滚动高度（scroll height）。滚动宽度是网页内容的实际宽度，包括内容溢出隐藏部分的宽度；滚动高度是网页内容的实际高度，包括内容溢出隐藏部分的高度。滚动尺寸通常用于确定滚动条的位置和滚动行为。
+11. 遍历：
+    1. NodeIterator(root,whatToShow,filter,entityReferenceExpansion)、
+    2. TreeWalker是NodeIterator的高级版：parentNode()、firstChild()、lastChild()、nextSlibling()、previousSibling()
+
+# 17.事件
+
+1. 事件概述：事件是Web开发中至关重要的概念，可以是用户与页面的交互行为（如点击、悬停、键盘输入等），也可以是文档状态的变化（如加载完成、DOM内容变化等）。
+2. 事件流模型：事件流指的是事件从发生到被处理的流程。它分为冒泡阶段和捕获阶段。在事件冒泡阶段，事件从子元素向父元素依次触发；在事件捕获阶段，事件从父元素向子元素依次触发。
+3. 事件处理程序：事件处理程序是一段JavaScript代码，用于指定事件发生时要执行的操作。可以通过属性指定事件处理程序，也可以使用addEventListener()方法动态地添加和删除事件处理程序。
+4. 事件对象：事件发生时，会创建一个事件对象，其中包含了与事件相关的信息。可以通过事件处理程序的参数或者通过全局变量event来访问事件对象。
+5. 事件类型：DOM提供了很多不同类型的事件，包括鼠标事件（如click、mouseover等）、键盘事件（如keydown、keyup等）、表单事件（如submit、change等）、页面加载事件（如load、DOMContentLoaded等）等。
+6. ==事件委托==：事件委托是一种常用的优化技术，通过将事件处理程序添加到父元素而不是每个子元素上来提高性能。事件委托利用了事件冒泡的机制，在父元素上捕获并处理事件。
+7. 阻止默认行为：某些事件触发后会有默认的行为，如点击a标签后跳转页面。可以使用preventDefault()方法来阻止事件的默认行为。
+8. 停止冒泡：可以使用stopPropagation()方法来停止事件的进一步传播，即停止事件冒泡。
+9. 自定义事件：可以创建自定义事件，通过dispatchEvent()方法触发自定义事件并设置相关的数据。
+10. 用户界面事件：load事件、unload事件、resize事件(浏览器窗口被缩放到新高度或宽度)、scroll事件()
+11. 焦点事件：focus：当元素获得焦点时触发的事件。例如，当用户点击输入框或通过键盘导航到输入框时，该事件将被触发。blur：当元素失去焦点时触发的事件。例如，当用户离开输入框或将焦点切换到其他元素时，该事件将被触发。
+12. 鼠标和滚轮事件：p510
+
+# 18.动画与Canvas图形
+
+1. 动画基础：介绍了创建动画效果的基础知识，包括使用定时器函数（如setTimeout和setInterval）来控制动画的更新，以及使用requestAnimationFrame方法优化动画循环。
+2. CSS动画：介绍了利用CSS中的transition和animation属性来创建动画效果的方法。使用这些属性配合关键帧（keyframes）规则，可以简便地实现平滑过渡和复杂动画。
+3. SVG动画：介绍了使用SVG（可缩放矢量图形）来创建动画的方法。SVG使用XML语法描述图形元素，可以通过JavaScript和CSS来操纵和控制SVG元素的属性实现动画效果。
+4. Canvas图形：介绍了使用Canvas API创建二维图形的方法。Canvas提供了绘制路径、形状、文本和图像的功能，并可以进行变换、填充、描边等操作，通过更新绘图上下文的状态，可以实现动态的图形效果。
+5. WebGL及WebGPU：介绍了使用WebGL和WebGPU来创建高性能的3D图形和动画效果。WebGL利用计算机的GPU进行硬件加速渲染，而WebGPU是WebGL的下一代标准，提供了更底层的接口和更高效的图形处理能力。
+6. 动画库：介绍了一些常用的JavaScript动画库，如GreenSock Animation Platform（GSAP）、Three.js等。这些库提供了更丰富的动画功能和更高效的动画处理能力，方便开发人员快速创建动画效果。
+
+# 19.表单脚本
+
+1. 表单基础知识：介绍了HTML表单的基本结构和常用表单元素（如文本框、复选框、单选按钮、下拉列表等）的特性和用法。
+   1. 获取<form>元素的引用：为其指定一个id
+   2. 使用document.forms集合
+2. 表单提交：用户通过点击提交按钮或图片按钮的方式提交。阻止submit事件的默认行为可以取消提交表单。event.preventDefault();
+3. 表单提交的一个最大问题是可能会提交两次表单；解决：1.表单提交后禁用提交按钮，或者通过onsubmit事件处理程序取消之后的表单提交
+4. 表单重置：讲解了如何使用JavaScript重置表单的方法，以便将表单的值恢复到初始状态。
+5. 表单验证：讲解了如何使用JavaScript对表单进行验证，包括检查输入是否为空、输入是否合法以及自定义验证规则等。可以通过使用HTML5的表单验证属性和通过JavaScript编程实现客户端验证。
+6. 表单序列化：介绍了如何使用JavaScript将表单数据序列化为URL编码的字符串或对象，便于传递给服务器端处理。
+7. 表单字段操作：提供了操作表单字段的方法，如获取和设置表单字段的值、禁用和启用表单字段等。
+8. 自动填写表单：介绍了自动填写表单的方法，包括使用浏览器的自动填表功能、通过JavaScript自动填写表单、以及使用第三方库实现自动填写表单的功能。
+
+# 20.JavaScript API
+
+1. 基本的JavaScript API：包括全局对象（如Object、Array、Math等）、函数和方法（如parseInt、parseFloat等）以及特殊的操作符和语句（如typeof、instanceof等）。这些API提供了基本的数据处理和操作能力。
+2. Web API：介绍了一些与Web开发相关的API，包括DOM API（用于访问和操作HTML文档的节点）、XMLHttpRequest API（用于进行Ajax请求）、Fetch API（用于发起网络请求）、Web Workers API（用于在后台执行耗时操作）、Geolocation API（用于获取用户位置信息）等。
+3. 媒体相关的API：包括用于操作音频和视频的API，如Web Audio API（用于创建和处理音频）、MediaDevices API（用于访问媒体设备，如摄像头和麦克风）等。
+4. 存储相关的API：包括本地存储的API，如Web Storage API（用于在浏览器中存储数据）、IndexedDB API（用于在浏览器中存储和检索大量数据）、WebSQL API（已废弃）等。
+5. 设备相关的API：介绍了一些设备相关的API，如Battery API（用于获取设备电池状态）、Vibration API（用于控制设备震动）等。
+6. 其他的API：还介绍了其他一些JavaScript的API，如国际化API（用于处理多语言和地区特定的操作）、Canvas API（用于绘制图形和图像）、WebSocket API（用于实现双向通信）等。
+
+# 21.错误处理与调试
+
+1. 错误处理基础：JavaScript中的错误类型（包括语法错误和运行时错误）以及错误对象的相关属性和方法。
+2. 异常处理：讲解了在代码中使用try-catch语句来捕获和处理异常。通过try块中的代码执行，如果发生异常，会跳转到关联的catch块中进行错误处理。finally子句，**try或catch块无法阻止finally块执行**
+3. 抛出异常：使用throw语句手动抛出异常。可以在代码中通过条件判断等操作，主动抛出异常来表示错误情况。
+4. 错误事件：利用window对象的error事件来捕获全局的运行时错误。通过监听该事件，可以在页面中捕获并处理未被捕获的异常。
+5. 识别错误
+   1. 类型转换错误：使用了会自动改变某个值的数据类型的操作符或语言
+   2. 数据类型错误
+   3. 通信错误：URL格式或发送数据的格式不正确
+6. 调试技术：介绍了使用浏览器提供的开发者工具进行调试的技巧和方法。包括在控制台中输出调试信息、设置断点、单步执行、查看变量和调用堆栈等。
+7. 错误处理策略：提供了一些错误处理的最佳实践和策略，如避免深度嵌套的try-catch块、使用适当的错误信息、记录错误日志等。
+
+# 22.XML
+
+1. XML基础知识：讲解了XML的基本语法和规则，包括标记、属性、实体引用等。XML用于描述数据和结构化信息，具有自我描述性和可扩展性。
+2. XML解析：讲解了使用JavaScript解析XML的方法。包括DOM解析（将XML解析为DOM树）、SAX解析（基于事件驱动的解析）和XMLHttpRequest获取XML数据等。
+3. XPath：它是一种在XML文档中定位和选择节点的语言。XPath提供了一组强大的查询语法，可以通过路径表达式来选择XML文档的节点。
+4. XSLT：XSLT用于将XML文档转换为其他格式，如HTML、XHTML、XML等。可以通过XSLT样式表中的模板规则定义转换过程。
+5. 重置处理器：处理器的reset()方法可以删除所有参数和样式表。
+
+# 23.JSON
+
+1. JSON基础知识：JSON是一种轻量级的数据交换格式，常用于前后端之间的数据传输和存储。JSON数据由键值对组成，可以表示简单值（如字符串、数字、布尔值）、对象和数组等复杂结构。
+2. JSON对象：JSON.stringify()用于将JavaScript对象转换为JSON字符串，JSON.parse()用于将JSON字符串解析为JavaScript对象。
+3. 序列化选项：SON.stringify()方法的序列化选项，可以控制生成的JSON字符串的格式和内容。如属性的键名排序、缩进、处理循环引用等。
+4. 解析选项：JSON.parse()方法的解析选项，可以控制解析JSON字符串时的行为。如处理日期格式、自定义解析函数等。
+5. toJSON():
+   1. 如果对象具有`toJSON()`方法，且该方法返回一个可序列化的值，则`JSON.stringify()`会使用返回的值来进行序列化。
+   2. 如果对象没有定义`toJSON()`方法，则`JSON.stringify()`会依次序列化对象的所有可枚举属性。
+   3. 如果对象同时具有`toJSON()`方法和可枚举属性，则只会使用`toJSON()`方法返回的值来进行序列化。
