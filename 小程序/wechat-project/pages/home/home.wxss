@@ -1,0 +1,16 @@
+/* pages/home/home.wxss */
+swiper image{
+  width: 100%;
+}
+swiper{
+  height: 480rpx;
+}
+.goodbox{
+  padding: 20px;
+overflow: hidden;
+}
+.goodbox image{
+  width: 200rpx;
+  float: left;
+  margin-right: 20rpx;
+}

@@ -1,0 +1,21 @@
+function sum(data) {
+  var total = 0
+  for(var i = 0; i < data.length; i++) {
+    if(data[i].checked) {
+      total += data[i].good.price*data[i].number
+    }
+  }
+  return total
+}
+
+function check(data) {
+  if(data.length === 0 ) return false
+  return data.every(function(item) {
+    return item.checked === true
+  })
+}
+
+module.exports = {
+  sum:sum,
+  check:check
+}

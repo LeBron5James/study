@@ -1,0 +1,51 @@
+{
+  "pages":[
+    "pages/home/home",
+    "pages/category/category",
+    "pages/shopcart/shopcart",
+    "pages/center/center",
+    "pages/detail/detail",
+    "pages/search/search",
+    "pages/searchlist/searchlist",
+    "pages/auth/auth",
+    "pages/telform/telform"
+  ],
+  "window":{
+    "backgroundTextStyle":"dark",
+    "navigationBarBackgroundColor": "#14c145",
+    "navigationBarTitleText": "购物",
+    "navigationBarTextStyle":"white"
+  },
+  "tabBar": {
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "主页",
+      "iconPath": "images/主页.png",
+      "selectedIconPath": "images/主页 (1).png"
+    },
+    {
+      "pagePath": "pages/category/category",
+      "text": "分类",
+      "iconPath": "images/搜索.png",
+      "selectedIconPath": "images/搜索 (1).png"
+    },
+    {
+      "pagePath": "pages/shopcart/shopcart",
+      "text": "购物车",
+      "iconPath": "images/购物车空.png",
+      "selectedIconPath": "images/购物车空 (1).png"
+    },
+    {
+      "pagePath": "pages/center/center",
+      "text": "我的",
+      "iconPath": "images/_我的.png",
+      "selectedIconPath": "images/_我的 (1).png"
+    }
+  ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "useExtendedLib": {
+    "weui": true
+  }
+}
