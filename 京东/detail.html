@@ -1,0 +1,871 @@
+<!--
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-07-18 16:38:20
+ * @LastEditTime: 2023-07-31 10:01:21
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>详情</title>
+    <link rel="stylesheet" href="./css/detail.css">
+    <!-- 引入字体图标库 -->
+</head>
+
+<body>
+    <!-- 商品信息 -->
+    <div class="warp">
+        <div class="product-intro">
+            <!-- 商品图片 -->
+            <div class="product-warp">
+                <div class="product-preview">
+                    <div class="product-preview-img" id="zoom">
+                        <img src="./images/m11.jpg" id="zoom-product-img">
+                        <i></i>
+                        <div></div>
+                        <!-- 放大镜 -->
+                        <div class="zoom-pup"></div>
+                        <div class="zoom-box">
+                            <img src="./images/m11.jpg" id="zoom-img">
+                        </div>
+                    </div>
+                    <!-- 轮播图 -->
+                    <div class="preview-list">
+                        <a href="javascript:;" class="spec-forward">
+                            <i></i>
+                        </a>
+                        <a href="javascript:;" class="spec-backward">
+                            <i></i>
+                        </a>
+                        <div class="spec-items">
+                            <ul class="spec-list-img">
+                                <li>
+                                    <img src="./images/m1.jpg" >
+                                </li>
+                                <li>
+                                    <img src="./images/m2.jpg">
+                                </li>
+                                <li>
+                                    <img src="./images/m3.png">
+                                </li>
+                                <li>
+                                    <img src="./images/m4.jpg">
+                                </li>
+                                <li>
+                                    <img src="./images/m5.jpg">
+                                </li>
+                                <li>
+                                    <img src="./images/m6.jpg">
+                                </li>
+                                <li>
+                                    <img src="./images/m7.jpg">
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="preview-info">
+                        <div class="preview-info-left">
+                            <a href="javascript:;">
+                                <i class="preview-info-love"></i>
+                                <em>关注</em>
+                            </a>
+                            <a href="javascript:;">
+                                <i class="preview-info-compare"></i>
+                                <em>对比</em>
+                            </a>
+                        </div>
+                        <div class="preview--info-report">
+                            <a href="javascript:;">举报</a>
+                        </div>
+                    </div>
+                    <div class="preview-purchase">
+                        <span class="preview-purchase-btn">企业购更优惠</span>
+                    </div>
+                </div>
+            </div>
+            <!-- 商品描述 -->
+            <div class="product-info">
+                <div class="sku-name">
+                    <img src="./images/newproduct.png">
+                    漫步者HECATE G3Mpro无线有线蓝牙游戏鼠标 三模电竞鼠标3395轻量化设计g3m pro 白色【现货】+防滑贴
+                </div>
+                <div class="news">
+                    <div class="new-product">【重磅新品】PAW3395传感器，游戏/静音双微动，2.4G/蓝牙/有线，63g轻量化，26000DPI，70H长续航！</div>
+                </div>
+                <!-- 商品价格 -->
+                <div class="product-summary">
+                    <div class="summary-price">
+                        <div class="good-price">
+                            <div class="dt">京 东 价</div>
+                            <div class="dd">
+                                <span class="g-price">
+                                    <span>￥</span>
+                                    <span class="dd-price">269.00</span>
+                                </span>
+                                <a href="javascript:;" class="good-notice">降价通知</a>
+                            </div>
+                        </div>
+                        <div class="summary-info">
+                            <div class="comment-count">
+                                <p class="comment-txt">累计评价</p>
+                                <a href="javascript:;" class="comment-count-txt">100+</a>
+                            </div>
+                        </div>
+                        <div class="summary-top">
+                            <div class="summary-promotion">
+                                <div class="dt">促 &nbsp; 销</div>
+                                <div class="dd">
+                                    <div class="p-promotion">
+                                        <div class="promotion-gift">
+                                            <div class="prom-gift">
+                                                <span class="prom-label">
+                                                    <em>赠品</em>
+                                                </span>
+                                                <div class="prom-gift-list">
+                                                    <div class="prom-gift-item">
+                                                        <a href="javascript:;">
+                                                            <img src="./images/gift.jpg" class="gift-img">
+                                                        </a>
+                                                        <em class="gift-num">× 1</em>
+                                                    </div>
+                                                    <div class="gift-limit">（条件：购买1件及以上，赠完即止）</div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="p-prom">
+                                            <div class="j-prom">
+                                                <em class="j-prom-discount">满减</em>
+                                                <em class="j-prom-dis">满269元减10元</em>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- 商品信息 -->
+                <div class="choose-warp">
+                    <!-- 增值业务 -->
+                    <div class="choose-support">
+                        <div class="dt">增值业务</div>
+                        <div class="dd">
+                            <div class="dd-support">
+                                <div class="support-oldtonew">
+                                    <a href="javascript:;" class="oldtonew-lk"
+                                        data-title="购买新品时可同步进行闲置物品回收，将闲置物品卖了换钱用于消费或提现。">
+                                        <i class="sprite-oldtonew"></i>
+                                        <span>高价回收，极速到账</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 配送至 -->
+                    <div class="choose-stock">
+                        <div class="dt">配 送 至</div>
+                        <div class="dd">
+                            <div class="store">
+                                <div class="stock-address">
+                                    <div class="address-area" id="address-choose">
+                                        <div class="address-text-warp" >
+                                            <div class="address-text">四川成都市彭州市致和街道</div>
+                                            <b></b>
+                                        </div>
+                                        <div class="address-content-warp">
+                                            <div class="area-tab">
+                                                <a href="javascript:;" class="switchable-item address-current">
+                                                    <em>四川</em>
+                                                    <i></i>
+                                                </a>
+                                                <a href="javascript:;" class="switchable-item">
+                                                    <em>成都市</em>
+                                                    <i></i>
+                                                </a>
+                                                <a href="javascript:;" class="switchable-item">
+                                                    <em>彭州市</em>
+                                                    <i></i>
+                                                </a>
+                                                <a href="javascript:;" class="switchable-item">
+                                                    <em>致和街道</em>
+                                                    <i></i>
+                                                </a>
+                                            </div>
+                                            <div class="area-content">
+                                                <div class="area-location area-address"  >
+                                                    <ul class="area-location-list">
+                                                        <li class="location-ponce"><a class="javascript:;">北京</a></li>
+                                                        <li class="location-ponce"><a class="javascript:;">四川</a></li>
+                                                        <li class="location-ponce"><a class="javascript:;">重庆</a></li>
+                                                        <li class="location-ponce"><a class="javascript:;">上海</a></li>
+                                                        <li class="location-ponce"><a class="javascript:;">辽宁</a></li>
+                                                        <li class="location-ponce"><a class="javascript:;">天津</a></li>
+                                                        <li class="location-ponce"><a class="javascript:;">河北</a></li>
+                                                        <li class="location-ponce"><a class="javascript:;">山西</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="area-location-city area-hidden area-address" >
+                                                    <ul class="area-location-list">
+                                                        <li class="location-city"><a href="javascript:;">成都市</a></li>
+                                                        <li class="location-city"><a href="javascript:;">自贡市</a></li>
+                                                        <li class="location-city"><a href="javascript:;">攀枝花市</a></li>
+                                                        <li class="location-city"><a href="javascript:;">泸州市</a></li>
+                                                        <li class="location-city"><a href="javascript:;">宜宾市</a></li>
+                                                        <li class="location-city"><a href="javascript:;">内江市</a></li>
+                                                        <li class="location-city"><a href="javascript:;">达州市</a></li>
+                                                        <li class="location-city"><a href="javascript:;">资阳市</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="area-location-district area-hidden area-address">
+                                                    <ul class="area-location-list">
+                                                        <li class="location-county"><a class="javascript:;">富顺县</a></li>
+                                                        <li class="location-county"><a class="javascript:;">荣县</a></li>
+                                                        <li class="location-county"><a class="javascript:;">东区</a></li>
+                                                        <li class="location-county"><a class="javascript:;">仁和区</a></li>
+                                                        <li class="location-county"><a class="javascript:;">彭州市</a></li>
+                                                        <li class="location-county"><a class="javascript:;">武侯区</a></li>
+                                                        <li class="location-county"><a class="javascript:;">高新区</a></li>
+                                                        <li class="location-county"><a class="javascript:;">新都区</a></li>
+                                                    </ul>
+                                                </div>
+                                                <div class="area-location-town area-hidden area-address">
+                                                    <ul class="area-location-list">
+                                                        <li class="location-town"><a class="javascript:;">怀德镇</a></li>
+                                                        <li class="location-town"><a class="javascript:;">代寺镇</a></li>
+                                                        <li class="location-town"><a class="javascript:;">万寿镇</a></li>
+                                                        <li class="location-town"><a class="javascript:;">赵化镇</a></li>
+                                                        <li class="location-town"><a class="javascript:;">炳草岗街道</a></li>
+                                                        <li class="location-town"><a class="javascript:;">东华街道</a></li>
+                                                        <li class="location-town"><a class="javascript:;">致和街道</a></li>
+                                                        <li class="location-town"><a class="javascript:;">白鹿镇</a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div class="store-prompt">
+                                    <strong>有货</strong>
+                                </div>
+                                <div class="store-free">
+                                    在线支付免运费
+                                    <i class="sprite-question"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 发货地 -->
+                    <div class="choose-supply">
+                        <div class="dt"></div>
+                        <div class="dd">
+                            <div class="summary-service">
+                                由
+                                <a href="javascript:;" class="service-red">漫步者数码旗舰店</a>
+                                从 上海 发货, 并提供售后服务. 现在下单，承诺明天（7月22日）发货，预计7月24日送达
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 服务支持 -->
+                    <div class="choose-service">
+                        <div class="dt">服务支持</div>
+                        <div class="dd">
+                            <div class="choose-service-icon"></div>
+                            <div class="choose-service-more">
+                                <div>
+                                    <a>7天价保</a>
+                                    <span>|</span>
+                                    <a>极速审核</a>
+                                    <a>|</a>
+                                    <a>运费险</a>
+                                </div>
+                                <div>
+                                    <a>闪电退款</a>
+                                </div>
+                                <span class="choose-arrow"></span>
+                            </div>
+                            <div class="choose-service-promises">
+                                <span>晚发赔</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="choose-line"></div>
+                    <!-- 选择颜色 -->
+                    <div class="choose-attrs">
+                        <div class="choose-color">
+                            <div class="dt">选择颜色</div>
+                            <div class="dd">
+                                <div class="choose-color-item">
+                                    <a href="javascript:;" class="color-item-lk color-click">
+                                        <img src="./images/product1.jpg">
+                                        <i>白色【现货】+防滑贴</i>
+                                    </a>
+                                </div>
+                                <div class="choose-color-item">
+                                    <a href="javascript:;" class="color-item-lk">
+                                        <img src="./images/product2.jpg">
+                                        <i>黑色</i>
+                                    </a>
+                                </div>
+                                <div class="choose-color-item">
+                                    <a href="javascript:;" class="color-item-lk">
+                                        <img src="./images/product3.jpg">
+                                        <i>蓝色</i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 京选服务 -->
+                    <div class="choose-serviceyc">
+                        <div class="dt">京选服务</div>
+                        <div class="dd">
+                            <div class="service-type">
+                                <div class="service-type-item">
+                                    <div class="type-item">
+                                        <img src="./images/four.png">
+                                        <span class="type-item-hd">4年换新保</span>
+                                        <span class="type-item-price">￥24.90</span>
+                                        <i class="arrow-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="service-type-item">
+                                    <div class="type-item">
+                                        <img src="./images/twoy.png">
+                                        <span class="type-item-hd">2年免费换新</span>
+                                        <span class="type-item-price">￥19.00</span>
+                                        <i class="arrow-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="service-type-item">
+                                    <div class="type-item">
+                                        <img src="./images/twot.png">
+                                        <span class="type-item-hd">2年全保换新</span>
+                                        <span class="type-item-price">￥25.00</span>
+                                        <i class="arrow-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="service-type-item">
+                                    <div class="type-item">
+                                        <img src="./images/three.png">
+                                        <span class="type-item-hd">3年全保修</span>
+                                        <span class="type-item-price">￥19.00</span>
+                                        <i class="arrow-icon"></i>
+                                    </div>
+                                </div>
+                                <div class="service-type-tips">
+                                    <i class="sprite-question"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 白条 -->
+                    <div class="choose-baitiao">
+                        <div class="dt">白条分期</div>
+                        <div class="dd">
+                            <div class="baitiao-list">
+                                <div class="baitiao-item">
+                                    <b></b>
+                                    <a href="javascript:;">
+                                        <strong>不分期</strong>
+                                    </a>
+                                    <div class="baitiao-tips hide">
+                                        <div class="baitiao-ul">
+                                            <span>无服务费</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="baitiao-item">
+                                    <b></b>
+                                    <a href="javascript:;">
+                                        <strong>￥91.01 x 3期</strong>
+                                    </a>
+                                    <div class="baitiao-tips hide">
+                                        <div class="baitiao-ul">
+                                            <span>含服务费：费率0.50%，￥1.35×3期 </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="baitiao-item">
+                                    <b></b>
+                                    <a href="javascript:;">
+                                        <strong>￥46.20 x 6期</strong>
+                                    </a>
+                                    <div class="baitiao-tips hide">
+                                        <div class="baitiao-ul">
+                                            <span>含服务费：费率0.50%，￥1.35×6期 </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="baitiao-item">
+                                    <b></b>
+                                    <a href="javascript:;">
+                                        <strong>￥23.73 x 12期</strong>
+                                    </a>
+                                    <div class="baitiao-tips hide">
+                                        <div class="baitiao-ul">
+                                            <span>含服务费：费率0.50%，￥1.35×12期</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="baitiao-item">
+                                    <b></b>
+                                    <a href="javascript:;">
+                                        <strong>￥12.52 x 24期</strong>
+                                    </a>
+                                    <div class="baitiao-tips hide">
+                                        <div class="baitiao-ul">
+                                            <span>含服务费：费率0.50%，￥1.35×24期</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="bt-info-tips">
+                                    <i class="question-icon"></i>
+                                </div>
+                            </div>
+                            <div class="baitiao-text"></div>
+                        </div>
+                    </div>
+                    <div class="choose-line"></div>
+                    <!-- 加入购物车 -->
+                    <div class="choose-btns">
+                        <div class="choose-btn-count">
+                            <div class="count-input">
+                                <input type="text" class="count-input-txt" value="1">
+                                <span class="btn-reduce btn-con">-</span>
+                                <span class="btn-add btn-con">+</span>
+                            </div>
+                        </div>
+                        <div class="choose-btn-addshopcart">加入购物车</div>
+                    </div>
+                    <div class="summary-tips">
+                        <div class="dt">温馨提示</div>
+                        <div class="dd">
+                            <div>
+                                <span>·支持7天无理由退货</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 产品相关 -->
+            <div class="product-track">
+                <div class="product-track-extra">
+                    <div class="track-tit">
+                        <h3>看了又看</h3>
+                        <span></span>
+                    </div>
+                    <div class="track-goods">
+                        <ul class="track-goods-list">
+                            <li class="track-item">
+                                <a href="javascript:;" class="track-item-lk">
+                                    <img src="./images/earcab.jpg">
+                                    <div class="track-item-desc">漫步者（EDIFIER）HECATE GM360有线游戏耳机入耳式降噪双动圈电脑手机吃鸡音乐电竞耳塞
+                                        3.5mm接口 黑红色+耳机包</div>
+                                    <p class="track-item-price">￥99.00</p>
+                                </a>
+                            </li>
+                            <li class="track-item">
+                                <a href="javascript:;" class="track-item-lk">
+                                    <img src="./images/headset.jpg">
+                                    <div class="track-item-desc">漫步者（EDIFIER）HECATE G30S雷霆版 2.4G无线蓝牙游戏耳机头戴式 音乐电竞耳机耳麦
+                                        电脑网课办公会议 多平台兼容 黑色+耳机支架/鼠标垫</div>
+                                    <p class="track-item-price">￥269.00</p>
+                                </a>
+                            </li>
+                            <li class="track-item">
+                                <a href="javascript:;" class="track-item-lk">
+                                    <img src="./images/sound.jpg">
+                                    <div class="track-item-desc">漫步者（EDIFIER）HECATE G1500bar一体式电脑音响 家用桌面台式机笔记本游戏电竞音箱
+                                        长条音响7.1音效 蓝牙5.3 黑色【蓝牙+有线】游戏鼠标垫</div>
+                                    <p class="track-item-price">￥299.00</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="track-more">
+                        <a href="javascript:;" class="track-more-btn"></a>
+                        <a href="javascript:;" class="track-more-btn track-btn-2"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 店长推荐 -->
+    <div class="warp">
+        <div class="manager-rem">
+            <div class="manager-tab">
+                <div class="manager-tab-txt">
+                    <p>店长推荐</p>
+                </div>
+            </div>
+            <div class="manager-product">
+                <div class="manager-content">
+                    <ul class="manager-content-list">
+                        <li class="manager-content-item">
+                            <div class="m-img">
+                                <a href="javascript:;">
+                                    <img src="./images/earcab.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="m-price">
+                                <strong>￥99.00</strong>
+                            </div>
+                        </li>
+                        <li class="manager-content-item">
+                            <div class="m-img">
+                                <a href="javascript:;">
+                                    <img src="./images/kl.jpg" alt="">
+                                </a>
+                            </div>
+                            <div class="m-price">
+                                <strong>￥269.00</strong>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- 商品详情 -->
+    <div class="warp">
+        <div class="deatil-warp">
+            <div class="shop-info">
+                <!-- 店铺 -->
+                <div class="popbox">
+                    <div class="popbox-inner">
+                        <div class="mt">
+                            <h3>漫步者电竞旗舰店</h3>
+                            <div class="im-warp">
+                                <a href="javascript:;" class="im-lk">
+                                    <i class="sprite-im"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="mc">
+                            <div class="pop-summary">
+                                <div class="pop-summary-infor">
+                                    <div class="pop-infor-star">
+                                        <div class="pop-star-tit">店铺星级</div>
+                                        <div class="star">
+                                            <div class="star-bg">
+                                                <div class="star-gary">
+                                                    <p class="star-light"></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="pop-infor-parts">
+                                        <div class="pop-infor-part">
+                                            <span class="infor-part-desc">商品评价</span>
+                                            <span class="infor-score-detail">
+                                                <em class="text-red">3.9 中</em>
+                                            </span>
+                                        </div>
+                                        <div class="pop-infor-part">
+                                            <span class="infor-part-desc">物流履约</span>
+                                            <span class="infor-score-detail">
+                                                <em class="text-red">4.8 高</em>
+                                            </span>
+                                        </div>
+                                        <div class="pop-infor-part">
+                                            <span class="infor-part-desc">售后服务</span>
+                                            <span class="infor-score-detail">
+                                                <em class="text-red">4.0 中</em>
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="pop-summary-btns">
+                                    <a href="javascript:;" class="btn-def enter-shop">
+                                        <i class="sprite-enter"></i>
+                                        <span>进店逛逛</span>
+                                    </a>
+                                    <a href="javascript:;" class="btn-def follow-shop">
+                                        <i class="sprite-follow"></i>
+                                        <span>关注店铺</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- 店内搜索 -->
+                <div class="shop-search">
+                    <div class="mt">
+                        <h3>店内搜索</h3>
+                    </div>
+                    <div class="mc">
+                        <p class="sp-search-item">
+                            <label>关键字：</label>
+                            <span><input type="text"></span>
+                        </p>
+                        <p class="sp-search-item">
+                            <label>价　格：</label>
+                            <span><input type="text" class="sp-item-price"> 到 <input type="text" class="sp-item-price"></span>
+                        </p>
+                        <p>
+                            <label class="sp-item-btn"></label>
+                            <span>
+                                <input type="submit" value="搜索" class="sp-search-btn">
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <!-- 店内分类 -->
+                <div class="shop-category">
+                    <div class="mt">
+                        <h3>店内分类</h3>
+                    </div>
+                    <div class="mc">
+                        <dl class="sp-single">
+                            <dt class="sp-open">
+                                <s></s>
+                                <a href="javascript:;">有线耳机</a>
+                            </dt>
+                        </dl>
+                        <dl class="sp-single">
+                            <dt class="sp-open">
+                                <s></s>
+                                <a href="javascript:;">有线耳机</a>
+                            </dt>
+                        </dl>
+                        <dl class="sp-single">
+                            <dt class="sp-open">
+                                <s></s>
+                                <a href="javascript:;">蓝牙耳机</a>
+                            </dt>
+                        </dl>
+                        <dl class="sp-single">
+                            <dt class="sp-open">
+                                <s></s>
+                                <a href="javascript:;">2.4G无线耳机</a>
+                            </dt>
+                        </dl>
+                        <dl class="sp-single">
+                            <dt class="sp-open">
+                                <s></s>
+                                <a href="javascript:;">游戏鼠标</a>
+                            </dt>
+                        </dl>
+                        <dl class="sp-single">
+                            <dt class="sp-open">
+                                <s></s>
+                                <a href="javascript:;">游戏键盘</a>
+                            </dt>
+                        </dl>
+                        <dl class="sp-single">
+                            <dt class="sp-open">
+                                <s class="sp-open-true"></s>
+                                <a href="javascript:;">音箱音响</a>
+                            </dt>
+                            <div class="dd-hide">
+                                <dd>
+                                    <a href="javascript:;">蓝牙音箱</a>
+                                </dd>
+                                <dd>
+                                    <a href="javascript:;">电脑音箱</a>
+                                </dd>
+                                <dd>
+                                    <a href="javascript:;">电竞音箱</a>
+                                </dd>
+                                <dd>
+                                    <a href="javascript:;">电视音箱</a>
+                                </dd>
+                            </div>
+                        </dl>
+                        <dl class="sp-single">
+                            <dt class="sp-open">
+                                <s></s>
+                                <a href="javascript:;">主动降噪耳机</a>
+                            </dt>
+                        </dl>
+                        <dl class="sp-single">
+                            <dt class="sp-open">
+                                <s></s>
+                                <a href="javascript:;">IP联名</a>
+                            </dt>
+                        </dl>
+                        <dl class="sp-single">
+                            <dt class="sp-open">
+                                <s></s>
+                                <a href="javascript:;">送礼精选</a>
+                            </dt>
+                        </dl>
+                    </div>
+                </div>
+                <!-- 店铺热销 -->
+                <div class="shop-pophot">
+                    <div class="mc">
+                        <div class="pophot-tab">
+                            <div class="tab-main">
+                                <ul>
+                                    <li class="tab-tirgger tab-current">店铺热销</li>
+                                    <li class="tab-tirgger">热门关注</li>
+                                </ul>
+                            </div>
+                            <div class="tab-image">
+                                <div class="tab-sale">
+                                    <ul class="tab-sale-list">
+                                        <li>
+                                            <div class="tab-item-img">
+                                                <img src="./images/one.jpg">
+                                            </div>
+                                            <div class="tab-item-info">
+                                                <div class="tab-item-price">
+                                                    <strong>￥1.00</strong>
+                                                </div>
+                                            </div>
+                                            <div class="tab-item-num">1</div>
+                                        </li>
+                                        <li>
+                                            <div class="tab-item-img">
+                                                <img src="./images/earcab.jpg">
+                                            </div>
+                                            <div class="tab-item-info">
+                                                <div class="tab-item-price">
+                                                    <strong>￥109.00</strong>
+                                                </div>
+                                            </div>
+                                            <div class="tab-item-num">2</div>
+                                        </li>
+                                        <li>
+                                            <div class="tab-item-img">
+                                                <img src="./images/14df891fee2c7c27.jpg">
+                                            </div>
+                                            <div class="tab-item-info">
+                                                <div class="tab-item-price">
+                                                    <strong>￥249.00</strong>
+                                                </div>
+                                            </div>
+                                            <div class="tab-item-num">3</div>
+                                        </li>
+                                        <li>
+                                            <div class="tab-item-img">
+                                                <img src="./images/headset.jpg">
+                                            </div>
+                                            <div class="tab-item-info">
+                                                <div class="tab-item-price">
+                                                    <strong>￥269.00</strong>
+                                                </div>
+                                            </div>
+                                            <div class="tab-item-num">4</div>
+                                        </li>
+                                        <li>
+                                            <div class="tab-item-img">
+                                                <img src="./images/aed.jpg">
+                                            </div>
+                                            <div class="tab-item-info">
+                                                <div class="tab-item-price">
+                                                    <strong>￥239.00</strong>
+                                                </div>
+                                            </div>
+                                            <div class="tab-item-num">5</div>
+                                        </li>
+                                        <li>
+                                            <div class="tab-item-img">
+                                                <img src="./images/sound.jpg">
+                                            </div>
+                                            <div class="tab-item-info">
+                                                <div class="tab-item-price">
+                                                    <strong>￥249.00</strong>
+                                                </div>
+                                            </div>
+                                            <div class="tab-item-num">6</div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- 商品参数 -->
+            <div class="product-detail">
+                <div class="detail-tab">
+                    <div class="detail-tab-main">
+                        <ul>
+                            <li class="target-this">商品介绍</li>
+                            <li>规格与包装</li>
+                            <li>售后保障</li>
+                            <li>商品评价(200+)</li>
+                            <li>本店好评商品</li>
+                        </ul>
+                        <div class="extra-add">
+                            <div class="add-shopcart-inner">
+                                <div class="add-shopcart">
+                                    <a href="javascript:;" class="add-shopcart-btn">加入购物车</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- 详细参数 -->
+                    <div class="detail-tab-con">
+                        <div class="detail-tab-item">
+                            <div class="d-parameter">
+                                <div class="parameter-brand">
+                                    <p class="brand-hd">
+                                        品牌： 
+                                        <a href="javascript:;" class="brand-hd-lk">漫步者（EDIFIER）</a>
+                                    </p>
+                                </div>
+                                <div class="d-parameter-list">
+                                    <ul>
+                                        <li>商品名称：漫步者（EDIFIER）G3M PRO</li>
+                                        <li>商品编号：10075101801330</li>
+                                        <li>
+                                            店铺： 
+                                            <a href="javascript:;" class="brand-hd-lk">漫步者电竞旗舰店</a>
+                                        </li>
+                                        <li>商品毛重：230.00g</li>
+                                        <li>工作方式：光电</li>
+                                        <li>微动类型：机械微动</li>
+                                        <li>尺寸：121-130mm</li>
+                                        <li>兼容系统：Windows，MacOS</li>
+                                        <li>背光灯效：无光</li>
+                                        <li>特点：类肤材质</li>
+                                        <li>可编程键个数：5-8个</li>
+                                        <li>最高DPI：20000以上</li>
+                                        <li>连接方式：2.4G+蓝牙</li>
+                                        <li>颜色：白色</li>
+                                    </ul>
+                                </div>
+                                <div class="more-par">
+                                    <a href="javascript:;" class="txt-arr">
+                                        更多参数
+                                        <span >>></span>
+                                    </a>
+                                </div>
+                            </div>
+                            <!-- 商品图片 -->
+                            <div class="d-content">
+                                <div class="d-content-warp">
+                                    <div class="detail-content-item">
+                                        <div></div>
+                                        <div class="d-content-img">
+                                            <img src="./images/e1.jpg" class="d-img"></img>
+                                            <img src="./images/e2.jpg" class="d-img"></img>
+                                            <img src="./images/e3.jpg" class="d-img"></img>
+                                            <img src="./images/e4.jpg" class="d-img"></img>
+                                            <img src="./images/e5.jpg" class="d-img"></img>
+                                            <img src="./images/e6.jpg" class="d-img"></img>
+                                            <img src="./images/e7.jpg" class="d-img" style="height: 584px;"></img>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="./js/detail.js"></script>
+
+</html>
