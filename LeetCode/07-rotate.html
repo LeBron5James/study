@@ -1,0 +1,33 @@
+<!--
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-08-15 09:50:01
+ * @LastEditTime: 2023-08-15 10:00:02
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮转数组</title>
+</head>
+
+<body>
+    <p>给定一个整数数组 nums，将数组中的元素向右轮转 k 个位置，其中 k 是非负数。</p>
+</body>
+<script>
+    var rotate = function (nums, k) {
+        if(k> nums.length) {
+            k = k % nums.length;
+        }
+        let rteArr = nums.splice(-k,k);
+        nums.unshift(...rteArr);
+        console.log(nums)
+    };
+
+    rotate([1,2],3)
+</script>
+
+</html>

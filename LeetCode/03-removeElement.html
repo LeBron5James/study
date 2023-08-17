@@ -1,0 +1,44 @@
+<!--
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-08-13 09:09:06
+ * @LastEditTime: 2023-08-13 09:50:22
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移除元素</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var removeElement = function (nums, val) {
+        /* let current = nums.indexOf(val);
+        while(current >  -1) {
+            if (current !== -1) {
+                nums.splice(current, 1);
+            }
+            current = nums.indexOf(val);
+        }
+        return nums.length; */
+        let j = 0;
+        for (let i = 0; i < nums.length; i++) {
+            if(nums[i] != val) {
+                nums[j] = nums[i];
+                j++;
+            }
+        }
+        console.log(j)
+        return j
+    };
+
+    removeElement([0, 1, 2, 2, 3, 0, 4, 2], 2)
+</script>
+
+</html>

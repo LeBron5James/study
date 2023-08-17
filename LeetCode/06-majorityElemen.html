@@ -1,0 +1,51 @@
+<!--
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-08-15 09:22:31
+ * @LastEditTime: 2023-08-15 09:48:46
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>多数元素</title>
+</head>
+
+<body>
+    <p>给定一个大小为 n 的数组 nums ，返回其中的多数元素。多数元素是指在数组中出现次数 大于 ⌊ n/2 ⌋ 的元素。
+
+        你可以假设数组是非空的，并且给定的数组总是存在多数元素。</p>
+</body>
+
+<script>
+    var majorityElement = function (nums) {
+        let x = 1;
+        let num = 0;
+        debugger
+        for (let i = 0; i < nums.length; i++) {
+            x = 1;
+            num = nums[i];
+            for (let j = 1; j < nums.length; j++) {
+                if (num == nums[j]) {
+                    x++;
+                }
+            }
+            if (x > nums.length / 2) {
+                return num;
+            }
+        }
+
+        // 法二  将其排序后，中间的数就是多数元素
+       /*  nums.sort((a, b) => a - b);
+        return nums[Math.floor(nums.length / 2)]; */
+    };
+
+    // console.log(majorityElement([3, 2, 3]));
+    // console.log(majorityElement([2,2,1,1,1,2,2]));
+    console.log(majorityElement([8, 8, 7, 7, 7]));
+</script>
+
+</html>

@@ -1,0 +1,67 @@
+<!--
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-08-12 09:22:14
+ * @LastEditTime: 2023-08-12 10:42:07
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>合并有序数组</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    var merge = function (nums1, m, nums2, n) {
+        let i = m - 1;  //nums1
+        let j = n - 1;  //nums2
+        let k = m + n - 1 //nums1最大下标
+
+        // 比较 nums1 与 nums2 元素大小，从右往左比较，将较大者从右往左依次放入 nums1 中
+        while (i >= 0 && j >= 0) {
+            if (nums1[i] > nums2[j]) {
+                nums1[k] = nums1[i];
+                i--;
+            } else {
+                nums1[k] = nums2[j];
+                j--
+            }
+            k--;
+        }
+
+        // 将nums1剩余元素放入
+        while (i >= 0) {
+            nums1[k] = nums1[i];
+            i--;
+            k--;
+        }
+
+        // 将nums2剩余元素放入
+        while (j >= 0) {
+            nums1[k] = nums2[j];
+            j--;
+            k--;
+        }
+
+        return nums1;
+
+        // 法二：  调用数组方法：先拼接，后排序
+        /* nums1.splice(m,n,...nums2);
+        return nums1.sort((a,b) => a-b); */
+
+    };
+
+    merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
+    // merge([ 0], 0, [1], 1)
+    // merge([1], 1, [0], 0)
+
+
+</script>
+
+</html>

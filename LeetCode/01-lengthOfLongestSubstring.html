@@ -1,0 +1,92 @@
+<!--
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-08-10 20:37:43
+ * @LastEditTime: 2023-08-11 10:45:58
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>
+    最长子串
+  </title>
+</head>
+
+<body>
+</body>
+
+<!--   原始方法 -->
+<!-- <script>
+
+  function findLongestSubstring(s) {
+    if (s == null) {
+      return 0;
+    }
+
+    const strlgh = s.length;
+
+    let maxLength = 0;
+
+    for (let i = 0; i < strlgh; i++) {
+      let current = 0;
+      let temp = [];
+      let t = 0;
+      let j = i;
+
+
+      while (s[j] && (temp.indexOf(s[j]) == -1)) {
+        temp[t++] = s[j++];
+      }
+
+      current = t;
+
+      if (current > maxLength) {
+        maxLength = current
+      }
+
+    }
+
+    return maxLength;
+  }
+
+  const longestLength = findLongestSubstring("abcabcbb");
+
+</script> -->
+
+<!-- 滑动窗口的思想 -->
+<script>
+  function findLongestSubstring(str) {
+    let left = 0; // 滑动窗口左边界
+    let maxLength = 0; // 最长子串长度
+    let charIndexMap = {}; // 字符索引映射
+
+    debugger
+
+    for (let right = 0; right < str.length; right++) {
+      const currentChar = str[right];
+
+      if (charIndexMap[currentChar] >= left) {
+        // 如果字符在当前窗口内出现过，更新左边界
+        left = charIndexMap[currentChar] + 1;
+      }
+
+      charIndexMap[currentChar] = right; // 更新字符索引 
+
+      // 更新最长子串长度
+      maxLength = Math.max(maxLength, right - left + 1);
+    }
+
+    return maxLength;
+  }
+
+  const inputString = "abcdefbacea";
+  const longestLength = findLongestSubstring(inputString);
+  console.log("无重复最长子串长度:", longestLength);
+
+</script>
+
+</html>

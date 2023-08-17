@@ -1,0 +1,41 @@
+<!--
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-08-16 09:31:48
+ * @LastEditTime: 2023-08-16 10:08:18
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 买卖股票的最佳时机</title>
+</head>
+
+<body>
+    <p>给定一个数组 prices ，它的第 i 个元素 prices[i] 表示一支给定股票第 i 天的价格。
+        你只能选择 某一天 买入这只股票，并选择在 未来的某一个不同的日子 卖出该股票。设计一个算法来计算你所能获取的最大利润。
+        返回你可以从这笔交易中获取的最大利润。如果你不能获取任何利润，返回 0 。</p>
+</body>
+<script>
+    // 贪心算法：取左边左小值，取右边最大值
+    var maxProfit = function (prices) {
+        let low = prices[0];
+        let max = 0;
+        debugger
+        for (let p of prices) {
+            low = Math.min(low, p);
+            max = Math.max(max, p - low);
+        }
+        return max;
+    };
+
+    // console.log(maxProfit([7, 1, 5, 3, 6, 4]))
+    // console.log(maxProfit([7, 6, 4, 3, 1]))
+    console.log(maxProfit([2,4,1]))
+    // console.log(maxProfit([3,3]))
+</script>
+
+</html>
