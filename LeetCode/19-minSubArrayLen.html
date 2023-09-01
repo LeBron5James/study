@@ -1,0 +1,49 @@
+<!--
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-08-23 08:19:25
+ * @LastEditTime: 2023-08-24 09:29:11
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>长度最小的子数组</title>
+</head>
+
+<body>
+    <p>
+        给定一个含有 n 个正整数的数组和一个正整数 target 。
+        找出该数组中满足其和 ≥ target 的长度最小的 连续子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，
+        并返回其长度。如果不存在符合条件的子数组，返回 0 。
+    </p>
+</body>
+<script>
+    /* 
+        *划动窗口思想：指定开始，结束位置，在开始到结束为窗口
+        *当窗口的值大于target，开始位置往前移一位
+        *当窗口位置小于target，结束位置往前移一位
+    */
+    var minSubArrayLen = function (target, nums) {
+        let length = Infinity; //初始长度
+        let start = 0, end = 0; //窗口开始，结束位置
+        let sum = 0; //窗口内的和
+        while (end < nums.length) {
+            sum += nums[end];
+            while (sum >= target) {
+                length = Math.min(length,end-start+1);  //取出滑动窗口最小长度
+                sum = sum - nums[start]; //开始位置往前移一位，窗口的值
+                start++       //窗口开始位置往前移一位         
+           }
+           end++
+        }
+        return length == Infinity ? 0:length
+    };
+    console.log(minSubArrayLen(7, [2, 3, 1, 2, 4, 3]))
+
+</script>
+
+</html>

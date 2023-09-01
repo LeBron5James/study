@@ -1,0 +1,140 @@
+<!--
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-08-25 09:08:06
+ * @LastEditTime: 2023-08-25 10:49:28
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设计链表</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    class listNode {
+        constructor(val, next) {
+            this.val = val;
+            this.next = next;
+        }
+    }
+
+    var MyLinkedList = function () {
+        this.head = null; //头节点
+        this.tail = null; //尾节点
+        this.size = 0;  //长度
+    };
+
+    /** 
+     * @param {number} index
+     * @return {number}
+     */
+     MyLinkedList.prototype.getNode = function (index) {
+    if (index < 0 || index >= this.size) return;
+    let cur = new listNode(0, thi.head);
+    while (index-- > 0) {
+        cur = cur.next
+    }
+    return cur
+};
+
+MyLinkedList.prototype.get = function (index) {
+    if (index < 0 || index >= this.size) return;
+   return this.getNode(index).val
+};
+
+    /** 
+     * @param {number} val
+     * @return {void}
+     */
+    MyLinkedList.prototype.addAtHead = function (val) {
+        let cur = new listNode(val, this.head);//创建节点
+        this.head = cur;
+        this.size++;
+        if (!this.tail) {
+            this.tail = cur;
+        }
+    };
+
+    /** 
+     * @param {number} val
+     * @return {void}
+     */
+    MyLinkedList.prototype.addAtTail = function (val) {
+        let node = new listNode(val, null);//创建节点
+        this.size++
+        if (this.tail) {
+            this.tail.next = node  //之前的尾节点指向现在的尾节点
+            this.tail = node  //尾节点赋值为cur
+            return
+        }
+        this.tail = node;
+        this.head = node;
+    };
+
+    /** 
+     * @param {number} index 
+     * @param {number} val
+     * @return {void}
+     */
+    MyLinkedList.prototype.addAtIndex = function (index, val) {
+        if (index > this.size) return
+        if (index <= 0) {
+            this.addAtHead(val);
+            return
+        }
+        if (index == this.size) {
+            this.addAtTail(val);
+            return
+        }
+
+        let node = this.get(index - 1); //获取上一个节点
+        node.next = new listNode(val, node.next); //创建节点
+        this.size++
+    };
+
+    /** 
+     * @param {number} index
+     * @return {void}
+     */
+    MyLinkedList.prototype.deleteAtIndex = function (index) {
+        if (index < 0 || index >= this.size) return;
+        // 删除头节点
+        if(index === 0){
+            this.head = this.head.next;
+            if(index === this.size-1) {
+                this.tail = this.head;
+            }
+            this.size--;
+            return
+        }
+
+        // 获取上一个节点
+        let node = this.get(index-1);
+        node.next = node.next.next;
+        //删除尾节点
+        if(index === this.size-1) {
+            this.tail = node;
+        }
+
+        this.size--
+    };
+
+    /**
+     * Your MyLinkedList object will be instantiated and called as such:
+     * var obj = new MyLinkedList()
+     * var param_1 = obj.get(index)
+     * obj.addAtHead(val)
+     * obj.addAtTail(val)
+     * obj.addAtIndex(index,val)
+     * obj.deleteAtIndex(index)
+     */
+</script>
+
+</html>

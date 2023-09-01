@@ -1,0 +1,64 @@
+<!--
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-08-24 09:29:27
+ * @LastEditTime: 2023-08-24 10:46:38
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>螺旋矩阵II</title>
+</head>
+
+<body>
+    <p>给你一个正整数 n ，生成一个包含 1 到 n2 所有元素，且元素按顺时针顺序螺旋排列的 n x n 正方形矩阵 matrix 。</p>
+</body>
+<script>
+    var generateMatrix = function (n) {
+        let startX = 0, startY = 0;  //起始位置
+        let mid = Math.floor(n / 2);//最后一个元素(中间)位置
+        let loop = Math.floor(n / 2);  //循环次数
+        let fillNum = 1;//填充的数字
+        let offset = 1; //控制每一层填充元素的个数
+        let arr = new Array(n).fill(0).map(() => new Array(n).fill(0));//填充的数组
+
+        while (loop--) {
+            let row = startX, col = startY;
+            // 上行  从左到右
+            for (; col < startY + n - offset; col++) {
+                arr[row][col] = fillNum++;
+            }
+            //右列 从上到下
+            for (; row < startX + n - offset; row++) {
+                arr[row][col] = fillNum++;
+            }
+            //下行 从右往左
+            for (; col > startY; col--) {
+                arr[row][col] = fillNum++;
+            }
+            //左列 从下往上
+            for (; row > startX; row--) {
+                arr[row][col] = fillNum++;
+            }
+
+            //循环一圈后，更新起始位置
+            startX++;
+            startY++;
+
+            //更新填充个数
+            offset += 2;
+        }
+
+        if (n % 2 == 1) {
+            arr[mid][mid] = fillNum;
+        }
+
+        return arr
+    };
+</script>
+
+</html>

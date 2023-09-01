@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>移除链表元素</title>
+</head>
+
+<body>
+    <p>给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点 </p>
+</body>
+<script>
+    var removeElements = function (head, val) {
+        const ret = new ListNode(0,head); //虚拟头节点
+        let cur = ret; //将虚拟头节点指向头节点
+        while(cur.next) {
+            if(cur.next.val == val) {
+                cur.next = cur.next.next;
+                continue;
+            }
+            cur = cur.next
+        }
+        return ret.next //返回头结点
+    };
+</script>
+
+</html>

@@ -1,0 +1,92 @@
+<!--
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-08-21 16:11:51
+ * @LastEditTime: 2023-08-21 18:11:40
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>加油站</title>
+</head>
+
+<body>
+    <p>在一条环路上有 n 个加油站，其中第 i 个加油站有汽油 gas[i] 升。
+        你有一辆油箱容量无限的的汽车，从第 i 个加油站开往第 i+1 个加油站需要消耗汽油 cost[i] 升。
+        你从其中的一个加油站出发，开始时油箱为空。
+        给定两个整数数组 gas 和 cost ，如果你可以按顺序绕环路行驶一周，
+        则返回出发时加油站的编号，否则返回 -1 。如果存在解，则 保证 它是 唯一 的。</p>
+</body>
+<script>
+    /* var canCompleteCircuit = function (gas, cost) {
+        let resArr = []  //找出每一条路径是否能够到达
+        let newGas = []  //展开环gas
+        let newCost = []  //展开环cost
+        let target = 99  //目标节点
+        // debugger
+        for (let j = 0; j < gas.length; j++) {
+            newGas = gas.slice(j, gas.length).concat(gas.slice(0, j));
+            newCost = cost.slice(j, cost.length).concat(cost.slice(0, j));
+
+            let res = newGas[0]
+            for (let i = 0; i < newGas.length; i++) {
+                // 能到达的条件：当前油量能到达最后一站
+                if (i === newGas.length - 1 && res >= newCost[i]) {
+                    resArr.push(1);
+                    target = j
+                    break;
+                }
+                res = res - newCost[i] + newGas[i + 1]
+                // 当路径中有一条：当前油量不能到达下一站，返回-1
+                if (res < newCost[i + 1]) {
+                    resArr.push(-1);
+                    break;
+                } else if (res >= newCost[i + 1]) {
+                    continue;
+                }
+            }
+
+            if (target == j) {
+                break
+            }
+
+        }
+        if (resArr.every(item => item === -1)) {
+            return -1
+        } else {
+            return target
+        }
+    }; */
+
+
+    var canCompleteCircuit = function (gas, cost) {
+        let res = 0
+        // 计算走完一圈油量
+        for (let i = 0; i < gas.length; i++) {
+            res += gas[i] - cost[i];
+        }
+        if (res < 0) {
+            return -1
+        }
+
+        let surplus = 0   //到下一位置的油量
+        let target = 0  //开始位置
+        for(let i = 0; i < gas.length; i++) {
+            surplus += gas[i] - cost[i]
+            if(surplus < 0 ){
+                surplus = 0
+                target = i + 1
+            }
+        }
+        return target == gas.length ? 0 : target;
+
+    };
+    console.log(canCompleteCircuit([1, 2, 3, 4, 5], [3, 4, 5, 1, 2]))
+    // console.log(canCompleteCircuit([2,3,4], [3,4,3]))
+</script>
+
+</html>

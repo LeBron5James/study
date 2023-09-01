@@ -1,0 +1,40 @@
+<!--
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-08-30 15:52:40
+ * @LastEditTime: 2023-08-30 16:14:26
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>赎金信</title>
+</head>
+
+<body>
+    <p>
+        给你两个字符串：ransomNote 和 magazine ，判断 ransomNote 能不能由 magazine 里面的字符构成。
+        如果可以，返回 true ；否则返回 false 。
+        magazine 中的每个字符只能在 ransomNote 中使用一次。
+    </p>
+</body>
+<script>
+    var canConstruct = function (ransomNote, magazine) {
+        let arr = new Array(26).fill(0);
+        for (let i = 0; i < magazine.length; i++) {
+            arr[magazine[i].charCodeAt() - 'a'.charCodeAt()]++
+        }
+        for (let i = 0; i < ransomNote.length; i++) {
+            arr[ransomNote[i].charCodeAt() - 'a'.charCodeAt()]--
+            if(arr[ransomNote[i].charCodeAt() - 'a'.charCodeAt()] < 0){
+                return false
+            }
+        }
+        return true
+    };
+</script>
+
+</html>

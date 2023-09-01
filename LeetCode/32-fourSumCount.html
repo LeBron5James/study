@@ -1,0 +1,44 @@
+<!--
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-08-30 09:57:34
+ * @LastEditTime: 2023-08-30 10:08:29
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>四数相加</title>
+</head>
+
+<body>
+    <p>给你四个整数数组 nums1、nums2、nums3 和 nums4 ，
+        数组长度都是 n ，请你计算有多少个元组 (i, j, k, l) 能满足：
+        0 <= i, j, k, l < n nums1[i] + nums2[j] + nums3[k] + nums4[l]==0</p>
+</body>
+<script>
+    var fourSumCount = function (nums1, nums2, nums3, nums4) {
+        let map = new Map();
+        let count = 0;
+        // 统计nums1和nums2数组元素之和，以及和出现的次数
+        for (const n1 of nums1) {
+            for (const n2 of nums2) {
+                let res = n1 + n2;
+                map.set(res,(map.get(res) || 0)+1)
+            }
+        }
+        // 计算nums3和nums4的和，统计0-(c+d)在map中出现的次数
+        for (const n3 of nums3) {
+            for (const n4 of nums4) {
+                let res =0- (n3+n4);
+                count = count + (map.get(res) || 0);
+            }
+        }
+        return count
+    };
+</script>
+
+</html>

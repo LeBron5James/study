@@ -1,0 +1,40 @@
+<!--
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-08-28 08:55:44
+ * @LastEditTime: 2023-08-28 09:46:31
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>有效的字母异位</title>
+</head>
+
+<body>
+    <p>给定两个字符串 s 和 t ，编写一个函数来判断 t 是否是 s 的字母异位词。
+        注意：若 s 和 t 中每个字符出现的次数都相同，则称 s 和 t 互为字母异位词。
+    </p>
+</body>
+<script>
+    var isAnagram = function (s, t) {
+        let arr = new Array(26).fill(0);//初始化数组
+        const base = 'a'.charCodeAt(); //将字符串a的ascii码赋值给base
+        for (let i = 0; i < s.length; i++) {
+            arr[s[i].charCodeAt() - base]++; //将s的字符出现的次数记录在arr数组中           
+        }
+        for (let i = 0; i < t.length; i++) {
+            arr[t[i].charCodeAt() - base]--;
+        }
+        let res = arr.every(ele => ele==0);
+        return res;
+    };
+
+    // console.log(isAnagram("rat","car"))
+    console.log(isAnagram("anagram","nagaram"))
+</script>
+
+</html>

@@ -1,0 +1,38 @@
+<!--
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-08-26 09:05:03
+ * @LastEditTime: 2023-08-26 09:18:35
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>24-两两交换链表中的节点</title>
+</head>
+
+<body>
+    <p>给你一个链表，两两交换其中相邻的节点，并返回交换后链表的头节点。
+        你必须在不修改节点内部的值的情况下完成本题（即，只能进行节点交换）。
+    </p>
+    <img src="https://assets.leetcode.com/uploads/2020/10/03/swap_ex1.jpg" alt="">
+</body>
+<script>
+    var swapPairs = function (head) {
+        let ret = new ListNode(0, head);//虚拟头节点
+        let temp = ret; 
+        while (temp.next && temp.next.next){
+            let cur = temp.next.next,pre=temp.next; //临时节点
+            pre.next = cur.next; //第一步：将头节点指向下下节点
+            cur.next = pre; //将头节点的下一节点指向头节点
+            temp.next = cur; //将虚拟头节点的下一节点指向头节点
+            temp = pre;     //将temp移动到下下节点，开始下一轮交换
+        }
+        return ret.next;
+    };
+</script>
+
+</html>

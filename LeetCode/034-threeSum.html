@@ -1,0 +1,63 @@
+<!--
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-08-31 09:33:07
+ * @LastEditTime: 2023-08-31 10:52:32
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>三数之和</title>
+</head>
+
+<body>
+    <p>给你一个整数数组 nums ，
+        判断是否存在三元组 [nums[i], nums[j], nums[k]] 满足 i != j、i != k 且 j != k ，
+        同时还满足 nums[i] + nums[j] + nums[k] == 0 。
+        请你返回所有和为 0 且不重复的三元组。
+        注意：答案中不可以包含重复的三元组。</p>
+    <div>
+        <p>解题思路</p>
+        <img src="https://code-thinking.cdn.bcebos.com/gifs/15.%E4%B8%89%E6%95%B0%E4%B9%8B%E5%92%8C.gif" alt="">
+    </div>
+</body>
+<script>
+    var threeSum = function (nums) {
+        const sortArr = nums.sort((a, b) => a - b);
+        const n = sortArr.length;
+        let resArr = [];
+        for (let i = 0; i < n; i++) {
+            let left = i + 1;
+            let right = n - 1;
+            // 剪枝-去重
+            if (sortArr[i] == sortArr[i - 1]) continue
+            while (left < right) {
+                let res = sortArr[i] + sortArr[left] + sortArr[right];
+                if (res === 0) {
+                    resArr.push([sortArr[i], sortArr[left], sortArr[right]])
+                    //去重
+                    while (left < right && sortArr[left] == sortArr[left + 1]) {
+                        left++
+                    };
+                    while (left < right && sortArr[right] == sortArr[right - 1]) {
+                        right--
+                    }
+                    left++
+                    right--
+                } else if (res < 0) {
+                    left++;
+                } else {
+                    right--
+                }
+            }
+        }
+        return resArr
+    };
+    threeSum([3, 1, 2, -4])
+</script>
+
+</html>

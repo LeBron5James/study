@@ -1,0 +1,49 @@
+<!--
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-08-22 20:08:34
+ * @LastEditTime: 2023-08-22 20:40:38
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>有序数组的平方</title>
+</head>
+
+<body>
+    <p>给你一个按 非递减顺序 排序的整数数组 nums，返回 每个数字的平方 组成的新数组，要求也按 非递减顺序 排序</p>
+</body>
+<script>
+    var sortedSquares = function (nums) {
+        /* for (let i = 0; i < nums.length; i++) {
+            nums[i] *= nums[i];
+        }
+        return nums.sort((a,b) => a-b) */
+
+        let start = 0, //指针1从左开始
+            end = nums.length - 1; //指针2从右开始
+        let k = nums.length - 1
+        let res = new Array(nums.length).fill(0); //结果
+        debugger
+        while (start <= end) {
+            let num1 = nums[start] * nums[start],
+            num2 = nums[end] * nums[end];
+            if (num1 >= num2) {
+                res[k--] = num1;
+                start++
+            } else {
+                res[k--] = num2;
+                end--
+            }
+        }
+
+        return res
+    };
+    console.log(sortedSquares([-4, 1, 2, 3]))
+</script>
+
+</html>
