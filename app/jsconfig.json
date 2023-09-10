@@ -1,0 +1,26 @@
+/*
+ * @Descripttion: 
+ * @Author: qiyu
+ * @version: 
+ * @Date: 2023-04-01 09:37:25
+ * @LastEditTime: 2023-04-01 10:07:21
+ */
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "esnext",
+    "baseUrl": "./",
+    "moduleResolution": "node",
+    "paths": {
+      "@/*": [
+        "src/*"
+      ]
+    },
+    "lib": [
+      "esnext",
+      "dom",
+      "dom.iterable",
+      "scripthost"
+    ]
+  }
+}
